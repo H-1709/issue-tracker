@@ -1,0 +1,40 @@
+# ===== Node.js =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== Environment variables =====
+.env
+
+# ===== Build outputs =====
+dist/
+build/
+
+# ===== React / Vite =====
+.vite/
+coverage/
+
+# ===== Logs =====
+logs/
+*.log
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== IDE / Editor =====
+.vscode/
+.idea/
+*.iml
+
+# ===== Java =====
+*.class
+*.jar
+*.war
+*.ear
+target/
+out/
+
+# ===== Misc =====
+*.exe
