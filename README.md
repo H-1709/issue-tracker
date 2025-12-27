@@ -100,6 +100,72 @@ root/
 
 ---
 
+## ▶️ How to Run Locally
+
+### 1️⃣ Clone the Repository
+```
+git clone https://github.com/H-1709/issue-tracker.git
+
+cd issue-tracker
+```
+
+---
+
+### 2️⃣ Start MongoDB
+
+Make sure MongoDB is running locally:
+
+```
+mongodb://127.0.0.1:27017/issue-tracker
+```
+
+You can verify using **MongoDB Compass**.
+
+---
+
+### 3️⃣ Run Backend (Node.js + Express)
+
+```
+cd backend
+npm install
+npm start
+```
+
+Backend will run at:
+```
+http://localhost:5000
+```
+
+---
+
+### 4️⃣ Run Frontend (React)
+
+Open a new terminal:
+
+```
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend will run at:
+  ```
+http://localhost:5173
+```
+
+---
+
+### 5️⃣ (Optional) Run Java Priority Engine
+
+```
+cd priority-engine-java
+javac Main.java
+java Main
+```
+Used to demonstrate heap-based priority calculation logic.
+
+---
+
 ## 🔌 API Endpoints
 
 - **POST /issues**  
