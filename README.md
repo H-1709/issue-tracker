@@ -1,105 +1,157 @@
-# issue-tracker
+# 🚀 Smart Issue Tracker — Priority-Driven Issue Management System
 
-project:
-  name: Smart Issue Tracker with Priority Engine
-  description: >
-    A full-stack issue tracking system that dynamically prioritizes issues
-    based on severity, frequency, and user impact.
-    Built using the MERN stack with a Java-based priority engine
-    to demonstrate algorithmic and system-level thinking.
+**React | Node.js | Express | MongoDB | Java | Data Structures**
 
-features:
-  - Dynamic priority calculation using weighted scoring
-  - Automatic sorting of issues by priority score
-  - Schema-level validation using Mongoose
-  - Clean, card-based React UI
-  - Independent Java implementation of priority logic
+A full-stack issue tracking system that dynamically ranks issues using a custom priority engine based on severity, frequency, and user impact.  
+Designed to simulate real-world production bug triaging and task prioritization workflows used by engineering teams.
 
-priority_engine:
-  formula: "priorityScore = severity * 3 + frequency * 2 + userImpact"
-  implemented_in:
-    - Node.js (real-time backend calculation)
-    - Java (algorithm validation)
+---
 
-tech_stack:
-  frontend: React
-  backend: Node.js, Express
-  database: MongoDB with Mongoose
-  logic_engine: Java
-  tools:
-    - Postman
-    - MongoDB Compass
-    - VS Code
+## ✨ Highlights (Quick Scan)
 
-project_structure:
-  root:
-    - frontend:
-        description: React user interface
-    - backend:
-        description: Node.js and Express API
-        files:
-          - models/Issue.js
-          - index.js
-    - priority-engine-java:
-        description: Java-based priority calculation
-        files:
-          - Issue.java
-          - Main.java
-    - README.yaml
+- ⚡ Priority-based issue ranking using weighted scoring logic  
+- 🧠 Custom priority engine using Java heap & comparator concepts  
+- 🔄 Automatic re-prioritization when issues are reported multiple times  
+- 📊 RESTful API with MongoDB for fast issue retrieval  
+- 🎨 Premium React UI with clean issue cards  
+- 🔗 End-to-end frontend ↔ backend integration  
+- 📈 Strong focus on system design and algorithmic thinking  
 
-setup:
-  clone_repository:
-    command: "git clone https://github.com/H-1709/issue-tracker.git"
-  backend:
-    steps:
-      - cd backend
-      - npm install
-      - node index.js
-    runs_on: "http://localhost:5000"
-  frontend:
-    steps:
-      - cd frontend
-      - npm install
-      - npm start
-    runs_on: "http://localhost:3000"
-  java_engine:
-    steps:
-      - cd priority-engine-java
-      - javac *.java
-      - java Main
+---
 
-api_endpoints:
-  get_issues:
-    method: GET
-    endpoint: /issues
-    description: Returns all issues sorted by priorityScore (descending)
-  create_issue:
-    method: POST
-    endpoint: /issues
-    body_example:
-      title: Payment crash
-      description: Crash on payment screen
-      severity: 5
-      frequency: 10
-      userImpact: 9
-      status: OPEN
+## 🧠 How It Works (High Level)
 
-development_notes:
-  - React StrictMode disabled to avoid duplicate API calls in development
-  - Backend prevents duplicate issue creation
-  - Older MongoDB records migrated to include priorityScore
-  - MongoDB schema enforces required fields
+User interacts with React UI  
+⬇  
+Frontend sends REST API request  
+⬇  
+Node.js + Express backend processes issue data  
+⬇  
+Priority score is calculated using weighted logic  
+⬇  
+Issues are stored and sorted in MongoDB by priority score  
+⬇  
+Ranked issues are rendered back in the UI
 
-future_improvements:
-  - Issue status workflow (OPEN, IN_PROGRESS, CLOSED)
-  - Filtering and sorting controls
-  - User authentication
-  - Deployment on cloud platforms
+---
 
-author:
-  name: Rajyaguru Hir
-  github: https://github.com/H-1709
+## ⚙️ Tech Stack
 
-license:
-  type: Educational
-  note: Project created for learning and demonstration purposes
+### Frontend
+- React.js  
+- Axios  
+- CSS  
+
+### Backend
+- Node.js  
+- Express.js  
+- MongoDB  
+- Mongoose  
+
+### Priority Engine
+- Java  
+- Priority Queue  
+- Comparator Logic  
+- Heap-based ordering  
+
+### Tools
+- Git  
+- GitHub  
+- MongoDB Compass  
+- VS Code  
+
+---
+
+## 🧩 Core Feature — Priority Engine
+
+Each issue is assigned a priority score using a weighted formula:
+```
+priorityScore = (severity × 5) + (frequency × 3) + (userImpact × 4)
+```
+
+
+### Rationale
+- Severity reflects technical risk  
+- Frequency reflects urgency and recurrence  
+- User Impact reflects business importance  
+
+This mirrors real-world engineering decision-making systems.
+
+---
+
+## 🗂️ Project Structure
+
+```
+root/
+├── frontend/
+│ └── React user interface
+│
+├── backend/
+│ ├── models/Issue.js
+│ ├── routes/issues.js
+│ └── index.js
+│
+├── priority-engine-java/
+│ ├── Issue.java
+│ └── Main.java
+│
+└── README.md
+```
+
+---
+
+## 🔌 API Endpoints
+
+- **POST /issues**  
+  Create a new issue and calculate priority score  
+
+- **GET /issues**  
+  Fetch all issues sorted by priority score  
+
+- **PATCH /issues/:id/report**  
+  Increment issue frequency and re-calculate priority  
+
+- **PATCH /issues/:id/status**  
+  Update issue status  
+
+---
+
+## 🧠 Data Model (Issue)
+
+- title: String  
+- description: String  
+- severity: Number  
+- frequency: Number  
+- userImpact: Number  
+- priorityScore: Number  
+- status: String  
+- timestamps  
+
+---
+
+## 📌 Resume Highlights
+
+- Built a full-stack issue tracking system using React, Node.js, and MongoDB  
+- Designed a custom priority engine using Java heap and comparator logic  
+- Implemented dynamic issue ranking based on severity, frequency, and user impact  
+- Applied sorted queries and efficient data modeling for fast issue retrieval  
+- Simulated real-world bug triaging workflows used in production systems  
+
+---
+
+## 📚 Learning Outcomes
+
+- Deep understanding of priority queues and weighted scoring systems  
+- Hands-on experience with REST API design and MongoDB schemas  
+- Clear separation of concerns between UI, API, and business logic  
+- Improved system design, debugging, and problem-solving skills  
+
+---
+
+## 🚀 Future Enhancements
+
+- Integrate Java Priority Engine directly with Node.js backend  
+- Add authentication and role-based access control  
+- Implement analytics dashboard for issue trends  
+- Containerize and deploy using Docker and cloud services  
+
